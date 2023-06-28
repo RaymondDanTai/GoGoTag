@@ -1,0 +1,354 @@
+/* Encoding */
+@charset "UTF-8";
+
+/* import Google Fonts */
+/* Noto Sans TC */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+/* Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* 全域設定 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+p,
+a,
+input,
+label,
+textarea,
+span,
+ul,
+li {
+    font-family: 'Open Sans', sans-serif;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+.form-control-dark {
+    border-color: var(--bs-gray);
+}
+
+.form-control-dark:focus {
+    border-color: #fff;
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+
+.text-small {
+    font-size: 85%;
+}
+
+.dropdown-toggle:not(:focus) {
+    outline: 0;
+}
+
+h1 {
+    color: var(--bs-white);
+}
+
+/* header */
+
+header {
+    position: relative;
+    box-shadow: 1px 1px 5px red;
+    height: 80px;
+}
+
+.header_coverer {
+    height: 80%;
+}
+
+.div_coverer {
+    height: 100%;
+}
+
+/* Logo*/
+.div_imgLogo {
+    height: 3rem;
+    width: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    transform: translateY(-50%);
+}
+
+.img_logo {
+    height: 100%;
+    width: 100%;
+}
+
+/* Nav Icon */
+.ul_icon {
+    height: 100%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.li_icon {
+    height: 100%;
+    display: inline-block;
+    margin: 0 1rem;
+    border-radius: .5rem;
+    position: relative;
+}
+
+.li_icon:hover {
+    cursor: pointer;
+    background-color: orange;
+}
+
+.li_icon:hover {
+    cursor: pointer;
+    background-color: orange;
+}
+
+.li_icon a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.li_icon a:hover::after {
+    transform-origin: left;
+    transform: scale(1);
+}
+
+#a-house {
+    color: gray !important;
+}
+
+.nav_icon {
+    font-size: 1.7rem;
+    line-height: 50px;
+}
+
+/* Search Bar */
+
+
+/* Avatar*/
+
+.avatar {
+    border: 1px solid white;
+}
+
+.div_avatar {
+    position: absolute;
+    top: 50%;
+    right: 5rem;
+    transform: translateY(-50%);
+}
+
+.img_avatar {
+    border-radius: 1rem;
+}
+
+/* side bar */
+
+/* 計算section應佔滿的高度 */
+section {
+    max-height: calc(100vh - 80px);
+    display: flex;
+    overflow: hidden;
+}
+
+
+/* left sidebar */
+.div_username {
+    text-align: center;
+}
+
+.left_sidebar {
+    height: calc(100vh - 80px);
+}
+
+/* right_content*/
+
+.right_content {
+    height: calc(100vh - var(--header-head));
+    width: 100%;
+    background-color: rgb(25, 25, 25);
+
+    /* overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden; */
+}
+
+.right_content::-webkit-scrollbar {
+    width: 12px;
+    background-color: rgb(25, 25, 25);
+    border: none;
+}
+
+.right_content::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.right_content::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(50, 50, 50, .5);
+}
+
+.right_content::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.rightcontent_container {
+    height: 80%;
+    width: 90%;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+.div_form{
+    box-shadow: 5px 5px 50px red;
+}
+
+.div_form,
+.form_upload {
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+#upload-preview {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 10px;
+
+}
+
+.img_upload {
+    height: 100%;
+    width: 50%;
+    cursor: pointer;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.file_input {
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.text_upload {
+    height: 100%;
+    width: 50%;
+    border-radius: 0 1rem 1rem 0;
+
+}
+
+.div_text {
+    height: 80%;
+    width: 100%;
+    background-color: black;
+    border-radius: 0 1rem 0 0;
+
+}
+
+.text_upload textarea {
+    border: none;
+    margin: 0;
+    padding: 0;
+    resize: none;
+
+
+}
+
+.text_upload textarea:focus {
+    border: none;
+    outline: none;
+}
+
+.post_text {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+}
+
+.div_button {
+    height: 20%;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 0 0 1rem 0;
+    position: relative;
+}
+
+.div_button button{
+    height: 100%;
+    width: 50%;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    /* transform: translateY(-50%); */
+}
+
+.div_button button:hover,
+.div_button button:focus{
+    /* background-color: rgba(255, 100, 0, .5); */
+}
+
+.div_button button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,0,0,0) 0%, rgba(255,0,0,0.3) 50%, rgba(255,0,0,0) 100%);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.div_button button:hover::after {
+    transform-origin: left;
+    transform: scale(1);
+    overflow: hidden;
+}
+
+.button_submit{
+    /* position: absolute;
+    top: 50%;
+    left:0; */
+}
+
+.button_clear{
+    /* position: absolute;
+    top: 50%;
+    right:0; */
+}
+
+#preview {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}

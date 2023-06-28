@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Luck</title>
+
+<!-- icon -->
+<script src="https://kit.fontawesome.com/34e848039b.js"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/good-luck.css">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar">
+			<div class="logo_area nav_items" id="logo-area">GoGoTag</div>
+			<div class="page_area nav_items" id="page-area">
+				<div class="page_icons" onclick="toHomePage()">
+					<i class="fa-solid fa-house page_icon"></i>
+				</div>
+				<div class="page_icons" onclick="toPostEditor()">
+					<i class="fa-solid fa-pen-to-square page_icon"></i>
+				</div>
+				<div class="page_icons" onclick="toFriendsWall();">
+					<i class="fa-solid fa-user-group page_icon"></i>
+				</div>
+
+			</div>
+			<div class="nav_bars_icon_area" id="nav-bars-icon-area"
+				onclick="showPageArea()">
+				<i class="fa-solid fa-bars nav_bars_icon" id="nav-bars-icon"></i>
+			</div>
+			<!--
+			<div class="search_area nav_items" id="search-area">
+				<input type="text" class="search_bar" id="search-bar"> <i
+					class="fa-solid fa-magnifying-glass searchbar_icon"></i>
+			</div>
+			-->
+			<div
+				class="avatar_area nav_items d-flex align-items-center justify-content-center"
+				id="nav-avatar-area">
+				<div
+					class="avatar_button d-flex align-items-center justify-content-center"
+					id="nav-avatar-button"></div>
+				<div class="accountList_button" onclick="showAccountSettingList()">
+					<div class="accountList_area fa-solid fa-caret-down"
+						id="account-area"></div>
+					<ul class="account_list" style="display: none">
+						<li class="account_setting" onclick="toAccountEditor()">帳號設定</li>
+						<li class="account_logout" onclick="logout()">帳號登出</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- main區塊 -->
+	<main>
+		<div class="container">
+			<!-- 左側邊欄 -->
+			<div class="leftside_bar" id="leftside-bar">
+				<div class="user_name" id="left-user-name-area"
+					onclick="toCurrentUserPersonalPage();">
+					<i class="fa-solid fa-user"></i>
+				</div>
+				<div class="leftside_list">
+
+					<div class="leftside_items">
+						<i class="fa-solid fa-dice"></i>好手氣
+					</div>
+
+				</div>
+			</div>
+
+			<!-- 中間主欄 -->
+			<div class="middle_column">
+				<div id="dice-user-area">
+					<div class="slideshadow_outter">
+						<div id="user-avatar-flash"></div>
+					</div>
+
+					<button id="dice-new-user" onclick="showRandomUser()">搖搖骰</button>
+				</div>
+
+
+				<div class="post_content" id="" style="display: none;">
+					<div class="poster_area">
+						<div class="poster_avatar">
+							<img class="poster_img" src="">
+						</div>
+						<div class="post_detail">
+							<div>
+								<div class="poster_name" id="" onclick="toUserPersonalPage()">李筱瑜</div>
+								<div class="post_date"></div>
+							</div>
+							<div>
+								<div class="post_tagName"></div>
+								<div class="post_locationName"></div>
+							</div>
+						</div>
+					</div>
+					<div class="text_area">
+						<textarea readonly="true"></textarea>
+					</div>
+					<div class="img_area">
+						<img class="post_img" src="">
+					</div>
+					<div class="count_area">
+						<div class="like_area">
+							<div class="like_icon fa-solid fa-thumbs-up">
+								<i></i>
+							</div>
+							<div class="like_count" id=""></div>
+						</div>
+						<div>
+							<div class="comment_count" id=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- 右側邊欄 -->
+			<div class="rightside_bar" id="rightside-bar">
+				<!--
+			<div class="notification_area">
+				<div id="notification-title">通知</div>
+			</div>
+						-->
+				<div class="friend_list">
+					<div id="friendList-title">好友列表</div>
+					<div id="friendList-contains"></div>
+				</div>
+
+			</div>
+		</div>
+	</main>
+	<script src="js/good-luck.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<!-- icon -->
+<script src="https://kit.fontawesome.com/34e848039b.js"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/homepage.css">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar">
+			<div class="logo_area nav_items" id="logo-area">GoGoTag</div>
+			<div class="page_area nav_items" id="page-area">
+				<div class="page_icons" onclick="toHomePage()">
+					<i class="fa-solid fa-house page_icon"></i>
+				</div>
+				<div class="page_icons" onclick="toPostEditor()">
+					<i class="fa-solid fa-pen-to-square page_icon"></i>
+				</div>
+				<div class="page_icons" onclick="toFriendsWall();">
+					<i class="fa-solid fa-user-group page_icon"></i>
+				</div>
+
+			</div>
+			<div class="nav_bars_icon_area" id="nav-bars-icon-area" onclick="showPageArea()">
+				<i class="fa-solid fa-bars nav_bars_icon" id="nav-bars-icon"></i>
+			</div>
+			<!--
+			<div class="search_area nav_items" id="search-area">
+				<input type="text" class="search_bar" id="search-bar"> <i
+					class="fa-solid fa-magnifying-glass searchbar_icon"></i>
+			</div>
+			-->
+			<div
+				class="avatar_area nav_items d-flex align-items-center justify-content-center"
+				id="nav-avatar-area">
+				<div
+					class="avatar_button d-flex align-items-center justify-content-center"
+					id="nav-avatar-button"></div>
+				<div class="accountList_button" onclick="showAccountSettingList()">
+					<div class="accountList_area fa-solid fa-caret-down"
+						id="account-area"></div>
+					<ul class="account_list" style="display: none">
+						<li class="account_setting" onclick="toAccountEditor()">帳號設定</li>
+						<li class="account_logout" onclick="logout()">帳號登出</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- main區塊 -->
+	<main>
+		<div class="container">
+			<!-- 左側邊欄 -->
+			<div class="leftside_bar" id="leftside-bar">
+				<div class="user_name" id="left-user-name-area"
+					onclick="toCurrentUserPersonalPage();">
+					<i class="fa-solid fa-user"></i>
+				</div>
+				<div class="leftside_list">
+					
+				<div class="leftside_items" onclick="callCheckboxArea()">
+					<i class="fa-regular fa-circle-dot"></i>主題
+				</div>
+				<div class="leftside_items">
+					<i class="fa-solid fa-handshake"></i>同好
+				</div>
+				<div class="leftside_items">
+					<i class="fa-solid fa-earth-americas"></i>探索
+				</div>
+				<div class="leftside_items" onclick="toGoodLuck();">
+					<i class="fa-solid fa-dice"></i>好手氣
+				</div>
+				
+				</div>
+			</div>
+
+			<!-- 中間主欄 -->
+			<div class="middle_column"></div>
+
+
+			<!-- 右側邊欄 -->
+			<div class="rightside_bar" id="rightside-bar">
+				<!--
+			<div class="notification_area">
+				<div id="notification-title">通知</div>
+			</div>
+						-->
+				<div class="friend_list">
+					<div id="friendList-title">好友列表</div>
+					<div id="friendList-contains"></div>
+				</div>
+
+			</div>
+		</div>
+	</main>
+
+	<section id="hided-area" style="display: none;">
+		<div class="post_editor">
+			<div class="editor_info">
+				<div class="editor_avatar">
+					<img id="editorAvatar-img" src="" alt="">
+				</div>
+				<div class="editor_name"></div>
+			</div>
+			<div class="selector_area">
+				<select class="tag_selector">
+					<option class="tag_items select_tag" value="0">--請選擇標籤--</option>
+					<option class="tag_items camping" value="1">露營</option>
+					<option class="tag_items diving" value="2">潛水</option>
+					<option class="tag_items fishing" value="3">釣魚</option>
+					<option class="tag_items swimming" value="4">游泳</option>
+				</select> <input type="text" class="edit_location">
+			</div>
+			<textarea id="edit-text"></textarea>
+			<div class="editImg_area" onclick="previewImage()">
+				<input type="file" class="upload_file" id="upload-file"> <img
+					class="preview_img" id="preview-img" src="">
+			</div>
+			<div class="postEditor_buttonArea">
+				<button type="button" class="postEditor_buttons" id="confirm-edit">完成編輯</button>
+				<button type="button" class="postEditor_buttons" id="cancel-edit">取消編輯</button>
+			</div>
+		</div>
+	</section>
+	<script src="js/homepage.js"></script>
+</body>
+
+</html>

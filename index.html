@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HomePage</title>
+
+	<!-- icon -->
+	<script src="https://kit.fontawesome.com/34e848039b.js" crossorigin="anonymous"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+	<!-- header -->
+	<header class="p-3">
+		<div class="container nav_container">
+			<div class="d-flex align-items-center justify-content-between">
+
+				<div class="logo_area d-flex align-items-center justify-content-start">GoGoTag</div>
+
+				<!-- 此區塊因應使用者是否登入變動 -->
+				<div class="d-flex align-items-center justify-content-end" id="login-control-area">
+					<button type="button" class="btn btn-outline-light me-2 login_button" id="login-button">登入</button>
+					<button type="button" class="btn btn-outline-light me-2 register_button"
+						id="register-button">註冊</button>
+				</div>
+
+
+			</div>
+		</div>
+	</header>
+
+	<!-- main -->
+	<main class="main_div d-flex align-items-center justify-content-center">
+		<div class="container_div">
+
+			<!-- 背景照片幻燈片 -->
+			<div class="slideshadow_outter d-flex">
+				<div class="slideshadow_inner d-flex">
+					<img src="img/goCamping/camp_background.jpg" alt="" class="slideshadow_images"
+						onclick="toHomePage()">
+					<img src="img/Test_Post2.jpg" alt="" class="slideshadow_images">
+					<img src="img/Test_Post3.jpg" alt="" class="slideshadow_images">
+				</div>
+				<button type="button" class="left_arrow" onclick="leftShift()"><i
+						class="fa-solid fa-circle-left fa-2xl"></i></button>
+				<button type="button" class="right_arrow" onclick="rightShift()"><i
+						class="fa-solid fa-circle-left fa-rotate-180 fa-2xl"></i></button>
+			</div>
+
+			<!-- 登入介面 -->
+			<form class="login_form p-4" id="login-form">
+				<div class="closeicon_div1">
+					<i class="fa-solid fa-xmark"></i>
+				</div>
+				<h1 class="h3 mb-3 login_h1" id="login-h1">登入介面</h1>
+				<div id="login-error-message"></div>
+				<div class="form-floating">
+					<input type="email" class="form-control" name="login-account" id="login-account">
+					<label for="login-account">電子郵件</label>
+				</div>
+				<div class="form-floating">
+					<input type="password" class="form-control" name="login-password" id="login-password">
+					<label for="login-password">密碼</label>
+				</div>
+				<!--
+				<div id="checkbox-area">
+					<input type="checkbox" name="keep-login-status" id="keep-login-status">
+					<label for="keep-login-status">保持登入</label>
+				</div>
+				-->
+				<button type="button" class="loginsubmit_button w-100 btn btn-lg" id="submit-login-request" onclick="submitLogin()">登入</button>
+			</form>
+
+
+			<!-- 註冊介面 -->
+			<form class="register_form p-4" id="register-form">
+				<div class="closeicon_div2">
+					<i class="fa-solid fa-xmark"></i>
+				</div>
+				<h1 class="mb-3 register_h1" id="register-h1">註冊介面</h1>
+				<div id="register-error-message"></div>
+				<div class="input_div">
+					<div class="form-floating register_info">
+						<input type="text" class="form-control" name="last-name" id="last-name"> <label
+							for="last-name">姓氏</label>
+					</div>
+					<div class="form-floating register_info">
+						<input type="text" class="form-control" name="first-name" id="first-name" required> <label
+							for="first-name">名字
+						</label>
+					</div>
+					<div class="form-floating register_info">
+						<input type="email" class="form-control" name="email" id="email">
+						<label for="email">電子信箱</label>
+					</div>
+					<div class="form-floating register_info">
+						<input type="password" class="form-control" name="password" id="password"> <label
+							for="password">密碼</label>
+					</div>
+					<div class="form-floating register_info">
+						<input type="password" class="form-control" name="password-check" id="password-check"> <label
+							for="password-check">確認密碼</label>
+					</div>
+					<div class="form-floating register_info">
+						<select size="1" class="form-control" name="gender" id="gender">
+							<option value="0">Please Select</option>
+							<option value="1">男性</option>
+							<option value="2">女性</option>
+							<option value="3">第三性</option>
+							<option value="4">跨性別</option>
+							<option value="5">其他未列性別</option>
+							<option value="6">我不想說</option>
+						</select> <label for="gender">性別</label>
+					</div>
+					<div class="form-floating register_info">
+						<input type="date" class="form-control" placeholder="birth date" name="birth-date"
+							id="birth-date" lang="en"> <label for="birth-date">出生日期</label>
+					</div>
+					<div class="form-floating register_info">
+						<input type="text" class="form-control" name="phone-number" id="phone-number"> <label
+							for="phone-number">電話號碼</label>
+					</div>
+				</div>
+				<button type="button" class="registersubmit_button w-100 btn btn-lg" onclick="registerAccount();">註冊</button>
+			</form>
+		</div>
+	</main>
+
+	<!-- 這是JS -->
+
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>

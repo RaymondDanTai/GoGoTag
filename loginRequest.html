@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please Login</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body>div{
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <h1>請先行登入後再操作</h1>
+        <h2>5秒後將跳轉至首頁……</h2>
+    </div>
+    <script>
+        setTimeout(function () {
+                    window.location.href = "index.html"
+                }, 5000
+                )
+    </script>
+</body>
+
+</html>

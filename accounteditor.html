@@ -1,0 +1,150 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>  -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<!-- icon -->
+	<script src="https://kit.fontawesome.com/34e848039b.js" crossorigin="anonymous"></script>
+
+	<!-- CSS -->
+	<!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+	<link rel="stylesheet" href="/SocialMedia/css/accounteditor.css">
+
+</head>
+
+<body>
+	<header>
+		<nav class="navbar">
+			<div class="logo_area nav_items" id="logo-area">GoGoTag</div>
+			<div class="page_area nav_items" id="page-area">
+				<div class="page_icons" onclick="toHomePage()">
+					<i class="fa-solid fa-house page_icon"></i>
+				</div>
+				<div class="page_icons" onclick="toPostEditor()">
+					<i class="fa-solid fa-pen-to-square page_icon"></i>
+				</div>
+				<div class="page_icons" onclick="toFriendsWall();">
+					<i class="fa-solid fa-user-group page_icon"></i>
+				</div>
+
+			</div>
+			<div class="nav_bars_icon_area" id="nav-bars-icon-area" onclick="showPageArea()">
+				<i class="fa-solid fa-bars nav_bars_icon" id="nav-bars-icon"></i>
+			</div>
+			<!--
+			<div class="search_area nav_items" id="search-area">
+				<input type="text" class="search_bar" id="search-bar"> <i
+					class="fa-solid fa-magnifying-glass searchbar_icon"></i>
+			</div>
+			-->
+			<div
+				class="avatar_area nav_items d-flex align-items-center justify-content-center"
+				id="nav-avatar-area">
+				<div
+					class="avatar_button d-flex align-items-center justify-content-center"
+					id="nav-avatar-button"></div>
+				<div class="accountList_button" onclick="showAccountSettingList()">
+					<div class="accountList_area fa-solid fa-caret-down"
+						id="account-area"></div>
+					<ul class="account_list" style="display: none">
+						<li class="account_setting" onclick="toAccountEditor()">帳號設定</li>
+						<li class="account_logout" onclick="logout()">帳號登出</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- main區塊 -->
+	<main>
+		<div class="container">
+			<!-- 左側邊欄 -->
+			<div class="leftside_bar" id="leftside-bar">
+				<div class="user_name" id="left-user-name-area" onclick="toCurrentUserPersonalPage();">
+					<i class="fa-solid fa-user"></i>
+				</div>
+				<div class="leftside_list">
+					<div class="leftside_items" onclick="toUpdatePassword()">
+						<i class="fa-solid fa-key"></i>密碼更新
+					</div>
+					<div class="leftside_items" onclick="toUpdateInformation()">
+						<i class="fa-solid fa-pen"></i>個人資料
+					</div>
+					<div class="leftside_items" onclick="toUpdateAvatar()">
+						<i class="fa-solid fa-image-portrait"></i>更改頭像
+					</div>
+				</div>
+			</div>
+
+			<!-- 中間主欄 -->
+			<div class="middle_column">
+				<div id="user-private">
+					<div class="page-title" id="">密碼更新</div>
+					<form class="information_form" id="private-form" action="">
+						<label for="email" class="input_labels">電子信箱</label> <label for="original-password"
+							class="input_labels">舊密碼</label> <input type="text" name="email" class="input_items"
+							id="email" readonly="true"> <input type="password" name="original-password"
+							class="input_items" id="original-password" readonly="true"> <label for="new-password"
+							class="input_labels">新密碼</label> <label for="new-password-confirm"
+							class="input_labels">密碼確認</label> <input type="password" name="new-password"
+							class="input_items" id="new-password" readonly="true"> <input type="password"
+							name="new-password-confirm" class="input_items" id="new-password-confirm" readonly="true">
+						<button type="button" class="input_items action_buttons" id="update-private-information"
+							disabled onclick="updateUserPassword()">提交表單</button>
+						<button type="button" class="input_items action_buttons" id="unlock-column"
+							onclick="unlockUpdateColumn()">解鎖欄位</button>
+					</form>
+				</div>
+				<div id="user-information" style="display: none">
+					<div class="page-title" id="">個人資料</div>
+					<form class="information_form" id="information-form" action="">
+						<label for="lastname" class="input_labels">姓</label> <label for="firstname"
+							class="input_labels">名</label> <input type="text" name="lastname" class="input_items"
+							id="lastname"> <input type="text" name="firstname" class="input_items" id="firstname">
+						<label for="gender" class="input_labels">性別</label>
+						<label for="birth-date" class="input_labels">生日</label>
+						<select name="gender" class="input_items" id="gender">
+							<option value="0">Please Select</option>
+							<option value="1">男性</option>
+							<option value="2">女性</option>
+							<option value="3">第三性</option>
+							<option value="4">跨性別</option>
+							<option value="5">其他未列性別</option>
+							<option value="6">我不想說</option>
+						</select>
+						<input type="date" name="birthdate" class="input_items" id="birth-date">
+						<label for="phone-number" class="input_labels">電話號碼</label>
+						<div></div>
+						<input type="text" name="phone-number" class="input_items" id="phone-number">
+						<div></div>
+						<button type="button" class="input_items action_buttons" id="update-information"
+							onclick="updateUserInformation()">提交表單</button>
+						<button class="input_items action_buttons" id="reset-information">清空資訊</button>
+					</form>
+				</div>
+				<div id="user-avatar" style="display: none">
+					<div class="page-title" id="">更改頭像</div>
+					<form class="" id="avatar-form" action="">
+						<input type="file" class="upload_file" id="upload_file"> <img class="preview_img"
+							id="preview-img" onclick="previewImage()">
+						<div class="button_area">
+							<button type="button" class="input_items action_buttons" id="submit_avatar"
+								onclick="updateAvatar()">提交表單</button>
+							<button type="button" class="input_items action_buttons" id="reset-avatar">清空資訊</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<!-- JavaScript -->
+	<!-- <script src="js/bootstrap.min.js"></script> -->
+	<script src="js/accounteditor.js"></script>
+</body>
+
+</html>
